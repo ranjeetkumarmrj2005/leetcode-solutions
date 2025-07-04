@@ -1,31 +1,11 @@
-// Last updated: 7/4/2025, 7:22:48 PM
+// Last updated: 7/4/2025, 7:33:39 PM
 class Solution {
 public:
-bool isPrime(int n){
-    if(n==1) return false;
-    for(int i=2;i<=sqrt(n);i++){
-        if(n%i==0) return false;
-    }
-    return true;
-}
-bool factor(int n){
-    for(int i=2;i<=sqrt(n);i++){
-        if(n%i==0 && isPrime(i)){
-            if(30%i!=0) return false;
-        }
-    }
-    for(int i=sqrt(n);i>1;i--){
-        if(n%(n/i)==0 && isPrime(n/i)){
-            if(30%(n/i)!=0) return false;
-        }
-    }
-    return true;
-}
     bool isUgly(int n) {
         if(n<=0) return false;
-        if(isPrime(n)&& n>5) return false;
-        else if(isPrime(n)&& 30%n==0) return true;
-        else return factor(n);
-         
+        while(n%2==0) n=n/2;
+        while(n%3==0) n=n/3;
+        while(n%5==0) n=n/5;
+        return (n==1);
     }
 };
