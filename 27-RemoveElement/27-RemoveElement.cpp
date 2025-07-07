@@ -1,4 +1,4 @@
-// Last updated: 7/6/2025, 10:02:53 PM
+// Last updated: 7/7/2025, 9:08:53 PM
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -6,7 +6,7 @@ public:
         int i=0;
         int j=n-1;
         int count=0;
-        // 2 2 3 3 
+        // 3 2 2 3  and val=3,ans=2
         while(i<=j){
             if(nums[j]==val){
                 count++;
