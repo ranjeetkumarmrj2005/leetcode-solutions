@@ -1,4 +1,4 @@
-// Last updated: 7/11/2025, 11:44:56 PM
+// Last updated: 7/11/2025, 11:46:13 PM
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -13,7 +13,8 @@ class Solution {
 public:
     ListNode* deleteMiddle(ListNode* head) {
         if( head->next==NULL){
-            return NULL;
+            head=NULL;
+            return head;
         }
         ListNode* slow=head;
         ListNode* fast=head;
