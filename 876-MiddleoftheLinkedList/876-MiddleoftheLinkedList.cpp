@@ -1,4 +1,4 @@
-// Last updated: 7/11/2025, 5:43:58 PM
+// Last updated: 7/11/2025, 6:53:23 PM
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -12,21 +12,13 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        ListNode* temp=head;
-        int size=0;
-        while(temp->next!=NULL){
-            size++;
-            temp=temp->next;
-        }
-        size++;
-        int target=(size)/2+1;
-        size=0;
-        temp=head;
-        while(temp->next!=NULL){
-            size++;
-            if(size==target) return temp;
-            else temp=temp->next;
-        }
-        return temp;
+      ListNode* slow=head;
+      ListNode* fast=head;
+      while( fast!=NULL&&fast->next!=NULL){
+        slow=slow->next;
+        if(slow==NULL) return slow;
+        fast=fast->next->next;
+      }
+      return slow;
     }
 };
